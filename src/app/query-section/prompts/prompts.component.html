@@ -3,7 +3,15 @@
     <div class="container">
         <div class="left-icon">
             <!-- Your left-side icon -->
-            <mat-icon>{{item['icon']}}</mat-icon>
+            <ng-container *ngIf="isMaterialIcon(item['icon'])">
+                <!-- Display Angular Material icon -->
+                <mat-icon>{{ item['icon'] }}</mat-icon>
+            </ng-container>
+            <ng-container *ngIf="!isMaterialIcon(item['icon'])">
+                <!-- Display image -->
+                <img [src]="item['icon']" alt="Image">
+            </ng-container>
+
         </div>
         <div class="right-text">
             <div [innerHTML]="item.promptText | lineBreak:25"></div>
