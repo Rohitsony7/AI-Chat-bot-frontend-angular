@@ -1,1 +1,179 @@
 /* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$md-mcgpalette0: (
+  50: #e4e1f6,
+  100: #bbc8e9,
+  200: #8ea3db,
+  300: #617ecd,
+  400: #3e59c1,
+  500: #1c30b6,
+  600: #192cae,
+  700: #1426a4,
+  800: #11249e,
+  900: #091b8e,
+  A100: #b9cfff,
+  A200: #87a7ff,
+  A400: #557fff,
+  A700: #3b69ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$accent-grey: (
+  50: #f2f2f2,
+  100: #d9d9d9,
+  200: #bfbfbf,
+  300: #a6a6a6,
+  400: #8c8c8c,
+  500: #737373,
+  600: #666666,
+  700: #595959,
+  800: #4d4d4d,
+  900: #404040,
+  A100: #ffffff,
+  A200: #f5f5f5,
+  A400: #e0e0e0,
+  A700: #cccccc,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+// Typography
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$RandomUser-primary: mat.define-palette($md-mcgpalette0);
+$RandomUser-accent: mat.define-palette($accent-grey);
+$Random-Typo: mat.define-typography-config(
+  $font-family: "sans-serif" !important,
+);
+
+// The warn palette is optional (defaults to red).
+$RandomUser-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$RandomUser-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $RandomUser-primary,
+      accent: $RandomUser-accent,
+      warn: $RandomUser-warn,
+    ),
+    typography: $Random-Typo,
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($RandomUser-theme);
+
+@font-face {
+  font-family: "Material Icons";
+  font-weight: 400;
+  font-style: normal;
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url("/assets/fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+
+.material-icons {
+  display: inline-block;
+  font-family: "Material Icons";
+  font-size: 24px; /* Preferred icon size */
+  font-weight: normal;
+  line-height: 1;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+html,
+body {
+  height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: "sans-serif";
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8ea3db; /* Blue */
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3; /* Darker Blue */
+}
+
+// Define soothing color palette
+$primary-color: #007bff; // Blue
+$secondary-color: #6c757d; // Grey
+$background-color: #f8f9fa; // Light grey
+$text-color: #333; // Dark grey
