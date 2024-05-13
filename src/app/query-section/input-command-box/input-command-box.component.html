@@ -1,0 +1,40 @@
+<div class="input-container">
+    <mat-form-field class="input-field">
+        <input matInput placeholder="Write a command..." [(ngModel)]="message" (keydown.enter)="sendMessage()"
+            [ngClass]="{ 'typing-animation': true }">
+        <div class="utils" matSuffix>
+            <button mat-icon-button [ngClass]="{ 'blue-icon': !isMuted,  }" (click)="toggleMicrophone()" matSuffix>
+                <mat-icon>
+                    {{(isMuted) ? 'mic_off' : 'mic' }}</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" [disabled]="!message" (click)="sendMessage()" matSuffix>
+                <mat-icon>send</mat-icon>
+            </button>
+        </div>
+    </mat-form-field>
+</div>
+
+<div class="utils">
+    <div class="button-container">
+        <button mat-icon-button>
+            <mat-icon> replay</mat-icon>
+        </button>
+        <div class="text">Start Over</div>
+    </div>
+
+    <button mat-icon-button (click)="toggleIcon()">
+        <mat-icon *ngIf="isStopped"> <!-- Show stop icon when isStopped is true -->
+            <img src="./assets/cricle-stop.png" alt="Stop" srcset="">
+        </mat-icon>
+        <mat-icon *ngIf="!isStopped"> <!-- Show play icon when isStopped is false -->
+            <img src="./assets/icons8-circled-play-48.png" alt="Play" srcset="">
+        </mat-icon>
+    </button>
+
+    <div class="button-container">
+        <button mat-icon-button>
+            <mat-icon>fast_forward</mat-icon>
+        </button>
+        <div class="text">Step</div>
+    </div>
+</div>

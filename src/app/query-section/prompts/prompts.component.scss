@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.left-icon {
+  margin-right: 10px;
+}
+
+.right-text {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.bold-line {
+  font-weight: bold;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.normal-lines {
+  font-weight: normal;
+}
+
+.bold-words {
+  font-weight: bold;
+}
+
+.normal-text {
+  font-weight: normal;
+}
+
+.prompt {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.prompt:hover {
+  background-color: #e0e0e0;
+}

@@ -1,0 +1,13 @@
+@for (item of prompts; track $index) {
+<div class="prompt" (click)="getGptRes(item)">
+    <div class="container">
+        <div class="left-icon">
+            <!-- Your left-side icon -->
+            <mat-icon>{{item['icon']}}</mat-icon>
+        </div>
+        <div class="right-text">
+            <div [innerHTML]="item.promptText | lineBreak:25"></div>
+        </div>
+    </div>
+</div>
+}

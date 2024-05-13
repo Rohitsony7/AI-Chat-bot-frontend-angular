@@ -1,0 +1,37 @@
+@if (!prompts.length) {
+
+<app-welcom-template></app-welcom-template>
+}
+@else{
+<!-- <p>{{prompts | json}} -->
+
+
+@for (item of prompts; track $index) {
+
+
+<div class="prompt">
+    <div class="container">
+        <div class="prompt-query">
+            <div class="left-icon" style="margin-right: 1rem;">
+                <!-- Your left-side icon -->
+                <mat-icon>{{item?.icon}}</mat-icon>
+            </div>
+            <div class="right-prompt">
+                {{ item.promptText}}
+            </div>
+        </div>
+
+        <div class="gpt-res">
+            <mat-icon>question_answer</mat-icon>
+            {{ getGptRes(item.promptText) }}
+
+        </div>
+
+    </div>
+</div>
+
+
+}
+
+
+}

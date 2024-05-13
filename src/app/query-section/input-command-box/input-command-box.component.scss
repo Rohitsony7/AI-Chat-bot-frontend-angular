@@ -1,0 +1,115 @@
+.input-container {
+  display: flex;
+  align-items: center;
+  //   padding: 10px;
+}
+
+.input-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+// Adjust the position of the mic icon inside the input field
+.input-field .mat-form-field-infix {
+  display: flex;
+  align-items: center;
+}
+
+// Increase the size of the mic icon
+.input-field mat-icon {
+  font-size: 24px;
+}
+
+// Add some margin to the submit button for spacing
+button[type="submit"] {
+  margin-left: 10px;
+}
+
+.mat-form-field.mat-form-field-appearance-outline .mat-form-field-outline {
+  border: none !important;
+}
+
+.blue-icon {
+  color: blue; /* Set color to blue */
+  position: relative; /* Ensure the icon is positioned relatively */
+  border-radius: 50%;
+}
+
+.blue-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px; /* Initial size of the radiating element */
+  height: 48px; /* Initial size of the radiating element */
+  border-radius: 50%; /* Make the element circular */
+  background-color: rgba(
+    0,
+    0,
+    255,
+    0.7
+  ); /* Initial color of the radiating element */
+  animation: radiate 3s infinite; /* Apply the radiating animation */
+}
+
+@keyframes radiate {
+  0% {
+    width: 0px; /* Initial size of the radiating element */
+    height: 0px; /* Initial size of the radiating element */
+    opacity: 1; /* Initial opacity */
+  }
+  100% {
+    width: 48px; /* Final size of the radiating element */
+    height: 48px; /* Final size of the radiating element */
+    opacity: 0; /* Final opacity */
+  }
+}
+
+.utils {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+  padding-right: 0;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+}
+
+.text {
+  font-size: small;
+  font-weight: bold;
+}
+mat-icon {
+  font-weight: bold;
+}
+
+@keyframes typing {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
+
+.typing-animation::after {
+  content: "";
+  display: inline-block;
+  animation: typing 1s infinite;
+}
+
+::ng-deep .input-container > mdc-text-field {
+  position: static !important;
+}

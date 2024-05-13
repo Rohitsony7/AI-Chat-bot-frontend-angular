@@ -1,0 +1,12 @@
+<div class="query-section">
+
+    <div class="prompts">
+        <app-prompts [prompts]="prompts" (promptSend)="getPrompt($event)"></app-prompts>
+    </div>
+
+    <div class="input-command-box">
+
+        <app-input-command-box (messageSent)="addPrompt($event)"></app-input-command-box>
+    </div>
+
+</div>

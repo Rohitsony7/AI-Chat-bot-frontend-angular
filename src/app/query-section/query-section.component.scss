@@ -1,0 +1,61 @@
+// Define soothing color palette
+$primary-color: #007bff; // Blue
+$secondary-color: #6c757d; // Grey
+$background-color: #f8f9fa; // Light grey
+$text-color: #333; // Dark grey
+.query-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.prompts {
+  flex: 1;
+  overflow-y: auto; // Enable vertical scrolling if content overflows
+}
+
+.input-command-box {
+  flex: none; // Do not grow or shrink
+  height: auto; // Allow the height to adjust based on content
+  border-top: 1px solid #ccc; // Add a border to separate from prompts
+  padding: 10px; // Add some spacing
+}
+.query-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.prompts {
+  height: 75%; // Set height to 75% of the parent container
+  overflow-y: auto; // Enable vertical scrolling if content overflows
+  //   background-color: var($background-color);
+  padding: 10px;
+  //   border-bottom: 1px solid $secondary-color;
+  font-size: 16px;
+  color: $text-color;
+  // Smooth transition
+  transition: background-color 0.3s ease;
+
+  // Hover effect
+  &:hover {
+    background-color: lighten($background-color, 5%);
+  }
+}
+
+.input-command-box {
+  flex: none; // Do not grow or shrink
+  height: auto; // Allow the height to adjust based on content
+  //   background-color: $background-color;
+  padding: 10px;
+  //   border-top: 1px solid $secondary-color;
+  font-size: 16px;
+  color: $text-color;
+
+  // Smooth transition
+  transition: background-color 0.3s ease;
+
+  // Hover effect
+  &:hover {
+    // background-color: lighten($background-color, 5%);
+  }
+}

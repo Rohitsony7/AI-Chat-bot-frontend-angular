@@ -1,0 +1,13 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <div class="sidebar">
+            <app-query-section (promptChanged)="receivePrompt($event)"
+                (sendNewPromptToGPT)="receiveSinglePrompt($event)"></app-query-section>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="gpt-res-section">
+            <app-gpt-res-section [prompts]="receivedPrompts"></app-gpt-res-section>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

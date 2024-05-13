@@ -1,0 +1,32 @@
+.prompt-query {
+  display: flex;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.gpt-res {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 5s steps(40, end);
+}
+
+.prompt-query {
+  display: flex;
+}
+
+.container {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin: 2rem;
+}
